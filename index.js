@@ -11,7 +11,6 @@ if('serviceWorker' in navigator) {
            .then(function() { console.log('Service Worker Registered'); });
 }
 
-
 // 仅浏览器支持且未安装该应用，以下事件才会触发
 window.addEventListener('beforeinstallprompt', (e) => {
   // Chrome 67 及之前版本，会自动展现安装的 prompt
@@ -20,7 +19,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // 存放事件用于后续触发
   deferredPrompt = e;
   // 展现按钮
-  // addBtn.style.display = 'block';
+  addBtn.style.display = 'block';
 
   addBtn.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
