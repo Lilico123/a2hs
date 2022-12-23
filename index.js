@@ -1,7 +1,7 @@
 let deferredPrompt;
 // 默认不展示按钮，仅支持 「Add to Home Screen」 功能才展现
 const addBtn = document.querySelector('.add-button');
-addBtn.style.display = 'none';
+// addBtn.style.display = 'none';
 
 // 规定必须注册 serviceWorker 才能使用 Add to Home Screen，
 // 且需要监听 install 和 fetch 事件，可以不处理
@@ -15,11 +15,13 @@ if('serviceWorker' in navigator) {
 window.addEventListener('beforeinstallprompt', (e) => {
   // Chrome 67 及之前版本，会自动展现安装的 prompt
   // 为了版本统一及用户体验，我们禁止自动展现 prompt
-  e.preventDefault();
+  // e.preventDefault();
   // 存放事件用于后续触发
-  deferredPrompt = e;
+  // deferredPrompt = e;
   // 展现按钮
-  addBtn.style.display = 'block';
+  // addBtn.style.display = 'block';
+
+  console.log(e)
 
   addBtn.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
